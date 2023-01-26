@@ -1,0 +1,7 @@
+{
+  "bin": "main.go",
+  "name": "Nasa-React",
+  "author": "Ameen Mohiyuddin",
+  "version": "1.0.0",
+  "license": "UNLICENCED"
+}
