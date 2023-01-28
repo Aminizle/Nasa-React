@@ -27,7 +27,7 @@ function App() {
         Select a date to explore NASA's picture of that day.
       </label>
 
-      <div className="max-w-lg">
+      <div className="max-w-xl mx-auto">
         <div>
           <DatePicker
             className="cursor-pointer my-5 text-center py-3 rounded-lg shadow-md hover:bg-slate-300 text-gray-600 font-medium bg-slate-200 "
@@ -37,8 +37,8 @@ function App() {
             maxDate={new Date()}
           />
 
-          <div class="max-w-3xl rounded overflow-hidden shadow-lg">
-            <img class="w-full" src={nasaData?.hdurl} alt={nasaData?.title} />
+          <div class="max-w-3xl rounded overflow-hidden shadow-xl">
+            <img class="h-max" src={nasaData?.hdurl} alt={nasaData?.title} />
             <div class="px-6 py-4">
               <div class="font-bold text-xl mb-2">{nasaData?.title}</div>
               <p class="text-gray-700 text-base">{nasaData?.explanation}</p>
