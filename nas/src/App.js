@@ -26,29 +26,35 @@ function App() {
       >
         Select a date to explore NASA's picture of that day.
       </label>
-      <DatePicker
-        className="cursor-pointer pl-4  py-3 leading-none rounded-lg shadow-sm hover:bg-slate-300 text-gray-600 font-medium bg-slate-200 "
-        selected={startDate}
-        onChange={(date) => setDate(date)}
-        minDate={new Date("1995-06-17")}
-        maxDate={new Date()}
-      />
-      <div class="max-w-3xl rounded overflow-hidden shadow-lg">
-        <img class="w-full" src={nasaData?.hdurl} alt={nasaData?.title} />
-        <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">{nasaData?.title}</div>
-          <p class="text-gray-700 text-base">{nasaData?.explanation}</p>
-        </div>
-        <div class="px-6 pt-4 pb-2">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #photography
-          </span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #travel
-          </span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-            #winter
-          </span>
+
+      <div className="max-w-lg">
+        <div>
+          <DatePicker
+            className="cursor-pointer my-5 text-center py-3 rounded-lg shadow-md hover:bg-slate-300 text-gray-600 font-medium bg-slate-200 "
+            selected={startDate}
+            onChange={(date) => setDate(date)}
+            minDate={new Date("1995-06-17")}
+            maxDate={new Date()}
+          />
+
+          <div class="max-w-3xl rounded overflow-hidden shadow-lg">
+            <img class="w-full" src={nasaData?.hdurl} alt={nasaData?.title} />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">{nasaData?.title}</div>
+              <p class="text-gray-700 text-base">{nasaData?.explanation}</p>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                #photography
+              </span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                #travel
+              </span>
+              <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                #winter
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
