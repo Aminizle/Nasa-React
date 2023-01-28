@@ -12,53 +12,51 @@ function App() {
     console.log(startDate);
     FetchNasa(date, setNasaData);
   };
-  // max-w-none object-cover w-full h-full absolute bg-no-repeat
+
   return (
     <div className="App">
       <div className="-z-10 absolute w-full h-full bg-gradient-to-b from-black to-white"></div>
+
+      {/* Page title */}
       <div>
-        <h1 className="font-bold mb-1 text-gray-200 block text-center text-5xl">
+        <h1 className="font-bold pt-5 mb-1 text-gray-200 block text-center text-5xl">
           NASA's archive explorer
         </h1>
       </div>
-      <label
-        htmlFor="datepicker"
-        className="my-4 text-gray-400 block text-center text-lg "
-      >
-        Select a date to explore NASA's picture of that day.
-      </label>
 
+      {/* DatePicker */}
       <div className="max-w-xl mx-auto">
-        <div>
-          <DatePicker
-            className="cursor-pointer my-5 text-center py-3 rounded-lg shadow-md hover:bg-slate-300 text-gray-600 font-medium bg-slate-200 "
-            selected={startDate}
-            onChange={(date) => setDate(date)}
-            minDate={new Date("1995-06-17")}
-            maxDate={new Date()}
-          />
-
-          <div className="max-w-3xl rounded overflow-hidden shadow-xl bg-slate-200">
-            <img
-              className="h-max"
-              src={nasaData?.hdurl}
-              alt={nasaData?.title}
-            />
-            <div className="px-6 py-4 ">
-              <div className="font-bold text-xl mb-2">{nasaData?.title}</div>
-              <p className="text-gray-700 text-base">{nasaData?.explanation}</p>
-            </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #photography
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #travel
-              </span>
-              <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #winter
-              </span>
-            </div>
+        <label
+          htmlFor="datepicker"
+          className="my-4 text-gray-400 block text-center text-lg "
+        >
+          Select a date to explore NASA's picture of that day.
+        </label>
+        <DatePicker
+          className="cursor-pointer my-5 text-center py-3 rounded-lg shadow-md hover:bg-slate-300 text-gray-600 font-medium bg-slate-200 "
+          selected={startDate}
+          onChange={(date) => setDate(date)}
+          minDate={new Date("1995-06-17")}
+          maxDate={new Date()}
+        />
+        
+        {/* Card */}
+        <div className="max-w-3xl rounded overflow-hidden shadow-xl bg-slate-200">
+          <img className="h-max" src={nasaData?.hdurl} alt={nasaData?.title} />
+          <div className="px-6 py-4 ">
+            <div className="font-bold text-xl mb-2">{nasaData?.title}</div>
+            <p className="text-gray-700 text-base">{nasaData?.explanation}</p>
+          </div>
+          <div className="px-6 pt-4 pb-2">
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              #photography
+            </span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              #travel
+            </span>
+            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+              #winter
+            </span>
           </div>
         </div>
       </div>
