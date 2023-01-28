@@ -15,17 +15,25 @@ function App() {
 
   return (
     <div className="App">
-      <PageTitle />
-      <PagesubTitle />
-
+      <div>
+        <h1 className="font-bold mb-1 text-gray-700 block">
+          NASA's Picture of the Day
+        </h1>
+      </div>
+      <label
+        htmlFor="datepicker"
+        className="font-bold mb-1 text-gray-700 block"
+      >
+        Select Date explore NASA's Picture of that Day.
+      </label>
       <DatePicker
+        className="cursor-pointer pl-4 pr-10 py-3 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium bg-slate-200"
         selected={startDate}
         onChange={(date) => setDate(date)}
         minDate={new Date("1995-06-17")}
         maxDate={new Date()}
-        
       />
-      <img src={nasaData?.hdurl} alt=""/>
+      <img src={nasaData?.hdurl} alt="" />
       <div>
         <ul>
           <li>
@@ -38,26 +46,7 @@ function App() {
   );
 }
 
-function PageTitle() {
-  return (
-    <div>
-      <h1>NASA's Picture of the Day</h1>
-    </div>
-  );
-}
-
-function PagesubTitle() {
-  return (
-    <div>
-      <h3>Select a date to explore NASA's Picture of the Day archive.</h3>
-    </div>
-  );
-}
-
-
-
 function FetchNasa(date, fn) {
-
   const urlDate =
     date.getFullYear() +
     "-" +
@@ -66,19 +55,18 @@ function FetchNasa(date, fn) {
     (date.getDate() > 9 ? date.getDate() : "0" + date.getDate());
 
   console.log(urlDate);
-useEffect(() => {
-  fetch(
-    `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${urlDate}`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      fn(data);
-    })
-    .catch((err) => {
-      console.log(`error ${err}`);
-    });
-  });
+  
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${urlDate}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        fn(data);
+      })
+      .catch((err) => {
+        console.log(`error ${err}`);
+      });  
 }
 
 export default App;
