@@ -1,6 +1,6 @@
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 
 function App() {
@@ -17,13 +17,20 @@ function App() {
     <div className="App">
       <PageTitle />
       <PagesubTitle />
-      <DatePicker selected={startDate} onChange={(date) => setDate(date)} />
-      <img src={ nasaData?.hdurl} />
+
+      <DatePicker
+        selected={startDate}
+        onChange={(date) => setDate(date)}
+        minDate={new Date("1995-06-17")}
+        maxDate={new Date()}
+        
+      />
+      <img src={nasaData?.hdurl} alt=""/>
       <div>
         <ul>
           <li>
-            <h3>{ nasaData?.title}</h3> 
-            <h3>{ nasaData?.explanation}</h3> 
+            <h3>{nasaData?.title}</h3>
+            <h3>{nasaData?.explanation}</h3>
           </li>
         </ul>
       </div>
@@ -50,11 +57,16 @@ function PagesubTitle() {
 
 
 function FetchNasa(date, fn) {
-  const urlDate = date.getFullYear() + "-" + ((date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1))) + '-' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate()));
 
-  console.log(urlDate)
-  
+  const urlDate =
+    date.getFullYear() +
+    "-" +
+    (date.getMonth() > 8 ? date.getMonth() + 1 : "0" + (date.getMonth() + 1)) +
+    "-" +
+    (date.getDate() > 9 ? date.getDate() : "0" + date.getDate());
 
+  console.log(urlDate);
+useEffect(() => {
   fetch(
     `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=${urlDate}`
   )
@@ -66,8 +78,7 @@ function FetchNasa(date, fn) {
     .catch((err) => {
       console.log(`error ${err}`);
     });
+  });
 }
-
-
 
 export default App;
