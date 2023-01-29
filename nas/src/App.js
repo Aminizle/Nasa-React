@@ -1,6 +1,6 @@
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import {
   FaTwitter,
@@ -46,6 +46,8 @@ function App() {
           minDate={new Date("1995-06-17")}
           maxDate={new Date()}
         />
+
+          {/* <InitialLoad /> */}
 
         {/* Card */}
         <div className="max-w-3xl mb-10 rounded overflow-hidden shadow-xl bg-slate-200">
@@ -116,6 +118,25 @@ function FetchNasa(date, fn) {
     .catch((err) => {
       console.log(`error ${err}`);
     });
+
+  
 }
+
+// function InitialLoad(fn) {
+//   useEffect(() => {
+//     fetch(
+//       `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=2023-01-28`
+//     )
+//       .then((res) => res.json())
+//       .then((data) => {
+//         console.log(data);
+//         fn(data);
+//       })
+//       .catch((err) => {
+//         console.log(`error ${err}`);
+//       });
+
+// },[])
+// }
 
 export default App;
