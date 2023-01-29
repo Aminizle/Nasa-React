@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="-z-10 absolute w-full h-full bg-gradient-to-b from-[#fd5602] to-white"></div>
+      <div className="-z-10 absolute w-full h-full bg-gradient-to-b from-[#00337C] to-white"></div>
 
       {/* Page title */}
       <div>
