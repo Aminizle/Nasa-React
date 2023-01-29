@@ -2,7 +2,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import { FaTwitter, FaGithub, FaYoutube, FaLinkedin, FaHome } from 'react-icons/fa';
+import {
+  FaTwitter,
+  FaGithub,
+  FaYoutube,
+  FaLinkedin,
+  FaHome,
+} from "react-icons/fa";
 
 function App() {
   const [startDate, setStartDate] = useState(new Date());
@@ -16,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="-z-10 absolute w-full h-full bg-gradient-to-b from-black to-white"></div>
+      <div className="-z-10 absolute w-full h-full bg-gradient-to-b from-[#fd5602] to-white"></div>
 
       {/* Page title */}
       <div>
@@ -29,7 +35,7 @@ function App() {
       <div className="max-w-xl mx-auto">
         <label
           htmlFor="datepicker"
-          className="my-4 text-gray-400 block text-center text-lg "
+          className="my-4 text-gray-300 block text-center text-lg "
         >
           Select a date to explore NASA's picture of that day.
         </label>
@@ -42,29 +48,45 @@ function App() {
         />
 
         {/* Card */}
-        <div className="max-w-3xl rounded overflow-hidden shadow-xl bg-slate-200">
+        <div className="max-w-3xl mb-10 rounded overflow-hidden shadow-xl bg-slate-200">
           <img className="h-max" src={nasaData?.hdurl} alt={nasaData?.title} />
           <div className="px-6 py-4 ">
             <div className="font-bold text-xl mb-2">{nasaData?.title}</div>
             <p className="text-gray-700 text-base">{nasaData?.explanation}</p>
           </div>
 
-          {/* Social links */}
+          {/* Social media links */}
           <div className="flex justify-around px-6 pt-4 pb-2">
-            <span className="py-1 text-3xl text-gray-700 mr-2 mb-2">
-            <a href="https://twitter.com/DevAmeenM" target="blank"><FaTwitter /></a>
+            <span className="py-1 text-3xl text-gray-700 hover:text-[#1d9bf0] mr-2 mb-2">
+              <a href="https://twitter.com/DevAmeenM" target="blank">
+                <FaTwitter />
+              </a>
             </span>
-            <span className="py-1 text-3xl text-gray-700 mr-2 mb-2">
-            <a href="https://github.com/Aminizle" target="blank"><FaGithub /></a>
+            <span className="py-1 text-3xl text-gray-700 hover:text-[#7a007a] mr-2 mb-2">
+              <a href="https://github.com/Aminizle" target="blank">
+                <FaGithub />
+              </a>
             </span>
-            <span className="py-1 text-3xl text-gray-700 mr-2 mb-2">
-            <a href="https://www.youtube.com/channel/UCtnzaJeLTPhhH6jolpdGhpw" target="blank"><FaYoutube /></a>
+            <span className="py-1 text-3xl text-gray-700 hover:text-[#ff0000] mr-2 mb-2">
+              <a
+                href="https://www.youtube.com/channel/UCtnzaJeLTPhhH6jolpdGhpw"
+                target="blank"
+              >
+                <FaYoutube />
+              </a>
             </span>
-            <span className="py-1 text-3xl text-gray-700 mr-2 mb-2">
-            <a href="https://www.linkedin.com/in/ameen-mohiyuddin-413bab197/" target="blank"><FaLinkedin /></a>
+            <span className="py-1 text-3xl text-gray-700 hover:text-[#0a66c2] mr-2 mb-2">
+              <a
+                href="https://www.linkedin.com/in/ameen-mohiyuddin-413bab197/"
+                target="blank"
+              >
+                <FaLinkedin />
+              </a>
             </span>
-            <span className="py-1 text-3xl text-gray-700 mr-2 mb-2">
-            <a href="https://ameenmohiyuddin.netlify.app/" target="blank"><FaHome /></a>
+            <span className="py-1 text-3xl text-gray-700 hover:text-[#fd5602] mr-2 mb-2">
+              <a href="https://ameenmohiyuddin.netlify.app/" target="blank">
+                <FaHome />
+              </a>
             </span>
           </div>
         </div>
