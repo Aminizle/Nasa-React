@@ -49,7 +49,7 @@ function App() {
 
         {/* Card */}
         <div className="max-w-3xl mb-10 rounded overflow-hidden shadow-xl bg-slate-200">
-          <img className="h-max" src={nasaData?.hdurl} alt={nasaData?.title} />
+        <a href={nasaData.hdurl} target="blank"><img className="h-max" src={nasaData?.hdurl} alt={nasaData?.title} /></a>
           <div className="px-6 py-4 ">
             <div className="font-bold text-xl mb-2">{nasaData?.title}</div>
             <p className="text-gray-700 text-base">{nasaData?.explanation}</p>
