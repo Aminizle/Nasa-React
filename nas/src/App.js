@@ -1,6 +1,6 @@
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -10,6 +10,7 @@ import {
   FaLinkedin,
   FaHome,
 } from "react-icons/fa";
+import Particle from "./components/Particle";
 
 function App() {
   const [startDate, setStartDate] = useState(new Date());
@@ -24,12 +25,13 @@ function App() {
 
   return (
     <div className="App">
+      <Particle className="-z-10 fixed " />
       <div className={darkMode ? "dark" : ""}>
-        <div className="-z-10 absolute w-full h-full bg-gradient-to-b from-[#5696f0] to-white dark:from-[#001b5f]"></div>
+        <div className="w-full h-full bg-gradient-to-b from-[#5696f0] to-white dark:from-[#001b5f]"></div>
 
         {/* Page title */}
 
-        <div className="flex justify-center pt-5 mb-1">
+        <div className="z-10 relative flex justify-center pt-5 mb-1">
           <h1 className="font-bold text-gray-200 text-5xl">
             NASA's archive explorer
           </h1>
@@ -40,7 +42,7 @@ function App() {
         </div>
 
         {/* DatePicker */}
-        <div className="max-w-xl mx-auto">
+        <div className="z-10 relative max-w-xl mx-auto">
           <label
             htmlFor="datepicker"
             className="my-4 text-gray-300 block text-center text-lg "
@@ -48,17 +50,19 @@ function App() {
             Select a date to explore NASA's picture of that day.
           </label>
           <DatePicker
-            className="cursor-pointer my-5 text-center py-3 rounded-lg shadow-md hover:bg-slate-300 text-gray-600 font-medium bg-slate-200 "
-            selected={startDate}
+            className="z-20 relative cursor-pointer my-5 text-center py-3 rounded-lg shadow-md hover:bg-slate-300 text-gray-600 font-medium bg-slate-200 "
+            // selected={startDate}
             onChange={(date) => setDate(date)}
             minDate={new Date("1995-06-17")}
             maxDate={new Date()}
+            showYearDropdown
+            showMonthDropdown
+            dropdownMode="select"
+            placeholderText="Click to select a date"
           />
 
-          <InitialLoad />
-
           {/* Card */}
-          <div className="max-w-3xl mb-10 rounded overflow-hidden shadow-xl bg-slate-200">
+          <div className="z-1 relative max-w-3xl mb-10 rounded overflow-hidden shadow-xl bg-slate-200">
             <a href={nasaData.hdurl} target="blank">
               <img
                 className="h-max"
@@ -107,7 +111,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>     
+      </div>
     </div>
   );
 }
@@ -133,22 +137,6 @@ function FetchNasa(date, fn) {
     .catch((err) => {
       console.log(`error ${err}`);
     });
-}
-
-function InitialLoad(fn) {
-  useEffect(() => {
-    fetch(
-      `https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_NASA_KEY}&date=2023-01-28`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        fn(data);
-      })
-      .catch((err) => {
-        console.log(`error ${err}`);
-      });
-},[])
 }
 
 export default App;
