@@ -15,7 +15,7 @@ import Particle from "./components/Particle";
 function App() {
   const [startDate, setStartDate] = useState(new Date());
   const [nasaData, setNasaData] = useState({});
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
 
   const setDate = (date) => {
     setStartDate(date);
@@ -26,8 +26,8 @@ function App() {
   return (
     <div className="App">
       <Particle className="-z-10 fixed " />
-      <div className={darkMode ? "dark" : ""}>
-        <div className="w-full h-full bg-gradient-to-b from-[#5696f0] to-white dark:from-[#001b5f]"></div>
+      {/* <div className={darkMode ? "dark" : ""}>
+        <div className="w-full h-full bg-gradient-to-b from-[#5696f0] to-white dark:from-[#001b5f]"></div> */}
 
         {/* Page title */}
 
@@ -35,10 +35,10 @@ function App() {
           <h1 className="font-bold text-gray-200 text-5xl">
             NASA's archive explorer
           </h1>
-          <BsFillMoonStarsFill
+          {/* <BsFillMoonStarsFill
             onClick={() => setDarkMode(!darkMode)}
             className="cursor-pointer text-2xl mx-2 text-gray-700 hover:text-[#FFE87C] dark:text-gray-200 dark:hover:text-[#FFE87C]"
-          />
+          /> */}
         </div>
 
         {/* DatePicker */}
@@ -117,7 +117,7 @@ function App() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 
