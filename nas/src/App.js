@@ -71,7 +71,12 @@ function App() {
               />
             </a>
             <div className="px-6 py-4 ">
-              <div className="font-bold text-xl mb-2">{nasaData?.title}</div>
+              <div className="flex justify-between ">
+                <div className="font-bold text-xl mb-2">{nasaData?.title}</div>
+                <p className="text-gray-700 text-right">
+                  {nasaData?.date}
+                </p>
+              </div>
               <p className="text-gray-700 text-base">{nasaData?.explanation}</p>
             </div>
 
