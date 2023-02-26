@@ -25,10 +25,9 @@
 <p>This project was built using the following technologies:</p>
 
 <ul>
-  <li>HTML 5</li>
-  <li>CSS 3</li>
-  <li>Bootstrap</li>
-  <li>JavaScript</li>
+  <li>React.js</li>
+  <li>Tailwind css</li>
+  <li>react-particles</li>
 </ul>
 
 <h2>Features</h2>
@@ -41,7 +40,7 @@
 
 <h2>Demo</h2>
 
-<p>You can see a live demo of this project at <a href="https://nasa-pictures-of-the-day.netlify.app/">https://nasa-pictures-of-the-day.netlify.app/</a>.</p>
+<p>You can see a live demo of this project at <a href="https://react-nasa-ameen.netlify.app/">https://react-nasa-ameen.netlify.app/</a>.</p>
 
 <h2>Installation</h2>
 
