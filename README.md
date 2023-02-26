@@ -1,5 +1,5 @@
 
-  <h1 align="center">NASA Picture of the Day Explorer</h1>
+  <h1 align="center">🚀 NASA Picture of the Day Explorer 🪐</h1>
   
   <div align="center" >  
 <a href='https://react-nasa-ameen.netlify.app/'>
