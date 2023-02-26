@@ -27,7 +27,7 @@
 <ul>
   <li>React.js</li>
   <li>Tailwind css</li>
-  <li><a href="ttps://github.com/matteobruni/tsparticles/blob/main/components/react/README.md" target="_blank">react-particles</></li>h
+  <li><a href="ttps://github.com/matteobruni/tsparticles/blob/main/components/react/README.md" target="_blank">react-particles</a></li>
 </ul>
 
 <h2>Features</h2>
