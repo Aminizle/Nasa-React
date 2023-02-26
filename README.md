@@ -59,8 +59,6 @@ https://api.nasa.gov/
 <h2>License</h2>
 
 <p>This project is licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
-
-      
-&nbsp&nbsp&nbsp
+  &nbsp&nbsp&nbsp
 
 <p align="center">Made with ❤ by Ameen</p>
