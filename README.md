@@ -45,9 +45,9 @@
 <h2>Installation</h2>
 
 <ol>
-  <li>Clone this repository to your local machine: <code>git clone https://github.com/your-username/marvel-cinematic-universe-explorer.git</code></li>
-  <li>Navigate to the project directory: <code>cd marvel-cinematic-universe-explorer</code></li>
-  <li>Open the <code>index.html</code> file in your web browser to view the project.</li>
+  <li>Clone this repository to your local machine: <code>git clone https://github.com/Aminizle/Nasa-React</code></li>
+  <li>Navigate to the project directory: <code>cd nas</code></li>
+  <li>Start the server: <code>run npm start</code> </li>
 </ol>
 
 <h2>Credits</h2>
