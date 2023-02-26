@@ -3,7 +3,7 @@
   
   <div align="center" >  
 <a href='https://react-nasa-ameen.netlify.app/'>
-<img src="img/nasav2.png" alt="Nasa's picture of the day archive explorer" height="100%" />
+<img src="Nasa-React/nas/img/react-nasa.png" alt="Nasa's picture of the day archive explorer" height="100%" />
 </a>
 <br>
 <br>
