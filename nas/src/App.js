@@ -32,8 +32,8 @@ function App() {
         {/* Page title */}
 
         <div className="z-10 relative flex justify-center pt-5 mb-1">
-          <h1 className="font-bold text-gray-200 text-5xl">
-            NASA's archive explorer
+          <h1 className="font-bold text-gray-200 text-5xl underline">
+            NASA's Archive Explorer
           </h1>
           {/* <BsFillMoonStarsFill
             onClick={() => setDarkMode(!darkMode)}
@@ -45,7 +45,7 @@ function App() {
         <div className="z-10 relative max-w-xl mx-auto">
           <label
             htmlFor="datepicker"
-            className="my-4 text-gray-300 block text-center text-lg "
+            className="my-4 text-gray-300 block text-lg "
           >
             Select a date to explore NASA's picture of that day.
           </label>
