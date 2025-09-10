@@ -1,19 +1,14 @@
-import React, { useCallback } from 'react';
+import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 function Particle() {
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
-    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    await console.log(container);
-  }, []);
+  const particlesLoaded = useCallback(async () => {}, []);
+
   return (
     <Particles
       id="tsparticles"
@@ -22,74 +17,111 @@ function Particle() {
       options={{
         background: {
           color: {
-            value: "#370648",
+            value: "#0b0d17", // deep space navy
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         interactivity: {
           events: {
-            onClick: {
-              enable: true,
-              mode: "push",
-            },
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
+            onClick: { enable: false },
+            onHover: { enable: false },
             resize: true,
           },
-          modes: {
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
         },
+        detectRetina: true,
         particles: {
-          color: {
-            value: "#ffffff",
-          },
-          links: {
-            color: "#ffffff",
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1,
-          },
-          collisions: {
-            enable: true,
-          },
-          move: {
-            directions: "none",
-            enable: true,
-            outModes: {
-              default: "bounce",
-            },
-            random: false,
-            speed: 1,
-            straight: false,
-          },
           number: {
+            value: 200,
             density: {
               enable: true,
-              area: 800,
+              area: 1200,
             },
-            value: 80,
           },
-          opacity: {
-            value: 0.5,
+          color: {
+            value: ["#ffffff", "#ffe9c4", "#d4fbff"],
           },
           shape: {
             type: "circle",
           },
+          opacity: {
+            value: 1,
+            random: true,
+            animation: {
+              enable: true,
+              speed: 1,
+              minimumValue: 0.3,
+              sync: false,
+            },
+          },
           size: {
-            value: { min: 1, max: 5 },
+            value: { min: 0.5, max: 2.5 },
+          },
+          move: {
+            enable: true,
+            speed: 0.1,
+            direction: "none",
+            random: true,
+            straight: false,
+            outModes: { default: "out" },
+          },
+          links: {
+            enable: false,
           },
         },
-        detectRetina: true,
+        emitters: [
+          {
+            direction: "top-right", // shooting star angle
+            rate: {
+              delay: 5, // one every ~5s
+              quantity: 1,
+            },
+            size: {
+              width: 0,
+              height: 0,
+            },
+            position: {
+              x: 0,
+              y: 100, // bottom-left corner
+            },
+            particles: {
+              color: { value: "#ffffff" },
+              move: {
+                speed: { min: 15, max: 25 }, // fast streaks
+                direction: "top-right",
+                straight: true,
+                outModes: { default: "destroy" },
+              },
+              size: {
+                value: { min: 1, max: 2 },
+                animation: {
+                  enable: true,
+                  startValue: "max",
+                  count: 1,
+                  speed: 5,
+                  sync: true,
+                },
+              },
+              opacity: {
+                value: 1,
+                animation: {
+                  enable: true,
+                  startValue: "max",
+                  count: 1,
+                  speed: 2,
+                  sync: true,
+                },
+              },
+              shape: { type: "line" },
+              life: {
+                duration: {
+                  sync: true,
+                  value: 1.5, // short-lived
+                },
+                count: 1,
+              },
+            },
+          },
+        ],
       }}
     />
   );
